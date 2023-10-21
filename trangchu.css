@@ -1,0 +1,82 @@
+body {
+    background-image: linear-gradient(to bottom, #878787, #ffffff);
+}
+.menu img {
+    width: 50px;
+    margin-left: 10px;
+}
+.menu ul li {
+    margin-right: 15px;
+}
+.menu ul li:hover{
+    background-color: #146fd0;
+}
+.menu ul li a:hover{
+    color: #ffffff;
+}
+.menu ul li a {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;  
+    text-align: center;
+}
+#slide img {
+    width: 100%;
+}
+#gioithieu {
+    padding-top: 80px;
+}
+#gioithieu h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: unset;
+    font-size: 36px;
+}
+#gioithieu h2 a {
+    color: #000000;
+    text-decoration: none;
+}
+#gioithieu img {
+    max-width: 100%;
+    height: auto;
+}
+#huongdan {
+    padding-top: 80px;
+    margin-bottom: 80px;
+}
+#huongdan h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: unset;
+    font-size: 36px;
+}
+#huongdan a {
+    width: 100%;
+    font-weight: 500;
+}
+#huongdan .hder {
+    background-color: rgb(191 191 191);
+}
+#huongdan img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+footer .footer-body {
+    background-color: #ababab;
+}
+footer .footer-in {
+    padding: 50px;
+}
+footer ul li{
+    list-style: none;
+    font-size: 20px;
+    font-weight: lighter;
+}
+footer ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+footer .footer-foot {
+    padding: 20px 0 10px;
+    color: #ffffff;
+}
