@@ -13,6 +13,7 @@
         width: 40%;
         height: 30px;
         border: 2px solid rgb(112, 112, 138);
+
     }
     button{
         width: 100px;
@@ -39,8 +40,8 @@
     function sendout(){
         let text = document.querySelector('input').value;
         let data = [
-            {name: "Nguyễn  Văn a", id: "123456789", idNumber: "0123456789", khoa: "Công nghệ thông tin", nganh: "Database"},
-            {name: "Nguyễn Văn  b", id: "221231034", idNumber: "1000000000", khoa: "Công trình", nganh: "Phụ hồ"}
+            {Name: "Nguyễn  Văn A", id: "123456789", idNumber: "0123456789",gender: "nam",class: "CNTT3", PhoneNumber: "1234567890",Khoa: "k63", address: "HÀ NỘI"},
+            {Name: "Nguyễn Văn  B", id: "221231034", idNumber: "1000000000",gender:"nữ",class: "CNTT4", PhoneNumber: "3000000000",Khoa: "k60", address: "Hồ Chí Minh" }
         ];
         let student = null;
         for(let i = 0; i < data.length; i++){
@@ -50,7 +51,7 @@
             }
         }
         if(student){
-            document.getElementById('entrange').innerHTML = "Tên: " + student.name + "<br>" + "Mã sinh viên: " + student.id + "<br>" + "Số căn cước: " + student.idNumber + "<br>" + "Khoa: " + student.khoa + "<br>" + "Ngành: " + student.nganh;
+            document.getElementById('entrange').innerHTML = "Tên: " + student.Name + "<br>" + "Mã sinh viên: " + student.id + "<br>" + "Số căn cước: " + student.idNumber + "<br>" +"Giới tính: "+student.gender+"<br>"+"Lớp: "+student.class + "<br>"+"Số điện thoại: "+ student.PhoneNumber+"<br>"+ "Khoá: " + student.Khoa + "<br>" + "Địa chỉ: "+student.address;
         }
         else{
             document.getElementById('entrange').innerHTML = "Không tìm thấy sinh viên này!";
