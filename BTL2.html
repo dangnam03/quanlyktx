@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <link rel="stylesheet" href="nav-bar.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <h3 style="font-weight: bold;">Biểu mẫu đăng ký nội trú</h3>
+    <hr>
+    
+    <form id="myForm">
+        <h4 style="font-weight: bold;">Thông tin sinh viên</h4>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="nameInput">Họ tên:</label>
+                <input type="text" id="nameInput" name="nameInput" class="form-control"><br>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="studentIdInput">Mã sinh viên:</label>
+                <input type="text" id="studentIdInput" name="studentIdInput" class="form-control"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="bDateInput">Ngày sinh:</label>
+                <input type="date" id="bDateInput" name="bDateInput" class="form-control"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="genderInput">Giới tính:</label><br>
+                <input type="radio" id="genderInput" name="genderInput" value="Male">
+                <label for="Male">Nam</label><br>
+                <input type="radio" id="genderInput" name="genderInput" value="Female">
+                <label for="Female">Nữ</label><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="phoneInput">Số điện thoại:</label>
+                <input type="text" id="phoneInput" name="phoneInput" class="form-control"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="addressInput">Địa chỉ:</label>
+                <input type="text" id="addressInput" class="form-control" name="addressInput"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="emailInput">E-mail cá nhân:</label>
+                <input type="text" id="emailInput" class="form-control" name="emailInput"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="uyearInput">Khóa:</label>
+                <input type="text" id="uyearInput" class="form-control" name="uyearInput"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="khoaInput">Khoa:</label>
+                <input type="text" id="khoaInput" class="form-control" name="khoaInput"><br>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="nganhInput">Ngành:</label>
+                <input type="text" id="nganhInput" class="form-control" name="nganhInput"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="classInput">Lớp:</label>
+                <input type="text" id="classInput" class="form-control" name="classInput"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="IDInput">CMND/CCCD:</label>
+                <input type="text" id="IDInput" class="form-control" name="IDInput"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="IDdateInput">Ngày cấp:</label>
+                <input type="date" id="IDdateInput" class="form-control" name="IDdateInput"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="dcttInput">Địa chỉ thường trú:</label>
+                <input type="text" id="dcttInput" class="form-control" name="dcttInput"><br>
+            </div>
+        </div>
+
+
+        <hr>
+        <h4 style="font-weight: bold;">Thông tin người thân</h4>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="nameInput">Họ tên:</label>
+                <input type="text" id="nameInput" class="form-control" name="nameInput"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="phoneInput">Số điện thoại:</label>
+                <input type="text" id="phoneInput" class="form-control" name="phoneInput"><br>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="relInput">Quan hệ:</label>
+                <select class="form-control" type="" id="relInput" name="relInput">
+                    <option value="1">Ông/Bà</option>
+                    <option value="2">Cha/Mẹ</option>
+                    <option value="3">Anh/Chị/Em</option>
+                    <option value="4">Khác</option>
+                    <br>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <button type="submit" style="background-color: rgb(102, 145, 202);">Đăng ký</button>
+
+</body>
+
+</html>
