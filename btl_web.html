@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý kí túc xá</title>
+    <link rel="stylesheet" href="btl_web.css">
+    <style>
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý sinh viên kí túc xá</h1>
+        <form>
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="studentId">Mã sinh viên:</label>
+            <input type="text" id="studentId" name="studentId" required>
+            <label for="block">Tòa nhà:</label>
+            <select id="block" name="block">
+                <option value="A1">A1</option>
+                <option value="A3">A3</option>
+                <option value="A4">A4</option>
+                <option value="A6">A6</option>
+            </select>
+            <label for="floor">Tầng:</label>
+            <select id="floor" name="floor">
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+            <label for="room">Phòng:</label>
+            <select id="room" name="room">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+            </select>
+            <div class="button-container">
+                <button type="submit">Tìm kiếm </button>
+                <button type="reset">Làm mới</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
