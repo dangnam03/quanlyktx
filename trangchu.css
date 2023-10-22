@@ -1,5 +1,5 @@
-body {
-    background-image: linear-gradient(to bottom, #878787, #ffffff);
+.body-b {
+    background-image: linear-gradient(to bottom, #cccccc, #ffffff);
 }
 .menu img {
     width: 50px;
@@ -54,7 +54,7 @@ body {
     font-weight: 500;
 }
 #huongdan .hder {
-    background-color: rgb(191 191 191);
+    background-color: rgb(215, 215, 215);
 }
 #huongdan img {
     display: block;
