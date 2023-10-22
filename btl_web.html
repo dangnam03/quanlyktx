@@ -5,48 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý kí túc xá</title>
     <link rel="stylesheet" href="btl_web.css">
+    <style>
+    
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Quản lý sinh viên kí túc xá</h1>
-        <form>
-            <label for="name">Họ và tên:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="studentId">Mã sinh viên:</label>
-            <input type="text" id="studentId" name="studentId" required>
-            <label for="block">Tòa nhà:</label>
-            <select id="block" name="block">
-                <option value="A1">A1</option>
-                <option value="A3">A3</option>
-                <option value="A4">A4</option>
-                <option value="A6">A6</option>
-            </select>
-            <label for="floor">Tầng:</label>
-            <select id="floor" name="floor">
-                <option value="1">01</option>
-                <option value="2">02</option>
-                <option value="3">03</option>
-                <option value="4">04</option>
-                <option value="5">05</option>
-            </select>
-            <label for="room">Phòng:</label>
-            <select id="room" name="room">
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-            </select>
-            <div class="button-container">
-                <button type="submit">Tìm kiếm </button>
-                <button type="reset">Làm mới</button>
-            </div>
-        </form>
+        <h1>Quản lý kí túc xá</h1>
+        
+        <div id="buildingList">
+            <!-- Danh sách tòa nhà -->
+        </div>
     </div>
+
+    <div class="container output-container">
+        <h1>Kết quả tra cứu</h1>
+        <div class="output" id="output">
+            <!-- Kết quả -->
+        </div>
+        <div class="lookup">
+            <button onclick="lookup()">Tra cứu</button>
+        </div>
+    </div>
+
+    <script>
+        var buildings = ["Tòa A1", "Tòa A3", "Tòa A4", "Tòa A6"];
+        var floors = 5;
+        var rooms = 10;
+        var selectedBuilding = null;
+        var selectedFloor = null;
+        var selectedRoom = null;
+
+        var buildingList = document.getElementById("buildingList");
+        for (var i = 0; i < buildings.length; i++) {
+            var buildingButton = document.createElement("button");
+            buildingButton.className = "accordion";
+            buildingButton.setAttribute("data-building", buildings[i]);
+            buildingButton.textContent = buildings[i];
+            buildingButton.onclick = function() { selectBuilding(this); };
+            buildingList.appendChild(buildingButton);
+
+            var buildingPanel = document.createElement("div");
+            buildingPanel.className = "panel";
+            buildingList.appendChild(buildingPanel);
+
+            for (var j = 1; j <= floors; j++) {
+                var floorButton = document.createElement("button");
+                floorButton.className = "accordion";
+                floorButton.setAttribute("data-floor", "Tầng " + j);
+                floorButton.textContent = "Tầng " + j;
+                floorButton.onclick = function() { selectFloor(this); };
+                buildingPanel.appendChild(floorButton);
+
+                var floorPanel = document.createElement("div");
+                floorPanel.className = "panel";
+                buildingPanel.appendChild(floorPanel);
+
+                for (var k = 1; k <= rooms; k++) {
+                    var roomDiv = document.createElement("div");
+                    roomDiv.className = "room";
+                    roomDiv.setAttribute("data-room", "Phòng " + k);
+                    roomDiv.textContent = "Phòng " + k;
+                    roomDiv.onclick = function() { selectRoom(this); };
+                    floorPanel.appendChild(roomDiv);
+                }
+            }
+        }
+
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+            });
+        }
+
+        function selectBuilding(element) {
+            selectedBuilding = element.getAttribute("data-building");
+        }
+
+        function selectFloor(element) {
+            selectedFloor = element.getAttribute("data-floor");
+        }
+
+        function selectRoom(element) {
+            selectedRoom = element.getAttribute("data-room");
+        }
+
+        function lookup() {
+            var output = document.getElementById("output");
+            if (selectedBuilding && selectedFloor && selectedRoom) {
+                output.innerHTML = "Bạn đang ở : " + selectedBuilding + " - " + selectedFloor + " - " + selectedRoom +" của Trường Đại Học Giao Thông Vận Tải!";
+            } else {
+                output.innerHTML = "Vui lòng chọn tòa nhà, tầng và phòng trước khi tra cứu!";
+            }
+        }
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
