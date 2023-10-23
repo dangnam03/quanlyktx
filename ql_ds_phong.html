@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý kí túc xá</title>
+    <link rel="stylesheet" href="btl_web.css">
+    <style>
+        .student {
+            padding: 5px;
+            background-color: #f0f0f0;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý kí túc xá</h1>
+        
+        <div id="buildingList">
+            <!-- Danh sách tòa nhà sẽ được tạo ra ở đây -->
+        </div>
+    </div>
+
+    <div class="container output-container">
+        <h1>Kết quả tra cứu</h1>
+        <div class="output" id="output">
+            <!-- Kết quả sẽ được hiển thị ở đây -->
+        </div>
+        <div id="studentList">
+            <!-- Danh sách sinh viên sẽ được tạo ra ở đây -->
+        </div>
+        <div class="lookup">
+            <button onclick="lookup()">Tra cứu</button>
+        </div>
+    </div>
+
+    <script>
+        var buildings = ["Tòa A1", "Tòa A3", "Tòa A4", "Tòa A6"];
+        var floors = 5;
+        var rooms = 10;
+        var selectedBuilding = null;
+        var selectedFloor = null;
+        var selectedRoom = null;
+        // Mảng lưu trữ thông tin sinh viên
+var students = [
+    { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Nguyễn Văn A" },
+    { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Trần Thị B" },
+    { building: "Tòa A1", floor: "Tầng 1", room: "102", name: "Lê Văn C" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
+    { building: "Tòa A1", floor: "Tầng 3", room: "301", name: "Nguyễn Văn Anh" },
+
+    
+    { building: "Tòa A3", floor: "Tầng 1", room: "101", name: "Sơn Tùng -MTP " },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn J97 " },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn J97 " },
+
+    { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Nguyễn Văn Trung" },
+    { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Trần Thị Bình" },
+    { building: "Tòa A1", floor: "Tầng 1", room: "102", name: "Lò Văn Cương" },
+    { building: "Tòa A3", floor: "Tầng 3", room: "301", name: "Phạm Thị D" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "202", name: "Phạm Thị Vũ" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "205", name: "Phạm Văn D" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Hoàng Thị Sen" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Cao Thị Dân" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị Dương" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
+    { building: "Tòa A4", floor: "Tầng 2", room: "201", name: "Phạm Thị Ánh" },
+    { building: "Tòa A4", floor: "Tầng 2", room: "201", name: "Sơn TÙng MTP" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
+    { building: "Tòa A6", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
+    { building: "Tòa A3", floor: "Tầng 5", room: "501", name: "Nguyễn Tiến Đạt " },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Đỗ QUỳnh Hoa " },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
+    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
+    { building: "Tòa A6", floor: "Tầng 2", room: "203", name: "Nguyễn QUỳnh Trang " },
+    { building: "Tòa A6", floor: "Tầng 2", room: "201", name: "Nguyễn THu Hà " },
+    { building: "Tòa A6", floor: "Tầng 2", room: "202", name: "Nguyễn Anh Trang " },
+    // Thêm các sinh viên khác tại đây
+];
+
+        var buildingList = document.getElementById("buildingList");
+        for (var i = 0; i < buildings.length; i++) {
+            var buildingButton = document.createElement("button");
+            buildingButton.className = "accordion";
+            buildingButton.setAttribute("data-building", buildings[i]);
+            buildingButton.textContent = buildings[i];
+            buildingButton.onclick = function() { selectBuilding(this); };
+            buildingList.appendChild(buildingButton);
+
+            var buildingPanel = document.createElement("div");
+            buildingPanel.className = "panel";
+            buildingList.appendChild(buildingPanel);
+
+            for (var j = 1; j <= floors; j++) {
+                var floorButton = document.createElement("button");
+                floorButton.className = "accordion";
+                floorButton.setAttribute("data-floor", "Tầng " + j);
+                floorButton.textContent = "Tầng " + j;
+                floorButton.onclick = function() { selectFloor(this); };
+                buildingPanel.appendChild(floorButton);
+
+                var floorPanel = document.createElement("div");
+                floorPanel.className = "panel";
+                buildingPanel.appendChild(floorPanel);
+
+                for (var k = 1; k <= rooms; k++) {
+                    var roomDiv = document.createElement("div");
+                    var roomNumber = j * 100 + k;
+                    roomDiv.className = "room";
+                    roomDiv.setAttribute("data-room", roomNumber.toString());
+                    roomDiv.textContent = "Phòng " + roomNumber;
+                    roomDiv.onclick = function() { selectRoom(this); };
+                    floorPanel.appendChild(roomDiv);
+                }
+            }
+        }
+
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+            });
+        }
+
+        function selectBuilding(element) {
+            selectedBuilding = element.getAttribute("data-building");
+        }
+
+        function selectFloor(element) {
+            selectedFloor = element.getAttribute("data-floor");
+        }
+
+        function selectRoom(element) {
+            selectedRoom = element.getAttribute("data-room");
+            showStudentList(selectedRoom);
+        }
+
+        function lookup() {
+            var output = document.getElementById("output");
+            if (selectedBuilding && selectedFloor && selectedRoom) {
+                output.innerHTML = "Bạn đã chọn: " + selectedBuilding + " - " + selectedFloor + " - " + selectedRoom;
+            } else {
+                output.innerHTML = "Vui lòng chọn tòa nhà, tầng và phòng trước khi tra cứu!";
+            }
+        }
+
+        function showStudentList(room) {
+            var studentList = document.getElementById("studentList");
+            studentList.innerHTML = "<h1>Danh sách sinh viên trong phòng " + room + "</h1>";
+            for (var i = 0; i < students.length; i++) {
+                if (students[i].room === room) {
+                    var studentDiv = document.createElement("div");
+                    studentDiv.className = "student";
+                    studentDiv.textContent = students[i].name;
+                    studentList.appendChild(studentDiv);
+                }
+            }
+        }
+        function showStudentList(room) {
+    var studentList = document.getElementById("studentList");
+    studentList.innerHTML = "<h1>Danh sách sinh viên trong phòng " + room + "</h1>";
+    for (var i = 0; i < students.length; i++) {
+        if (students[i].room === room) {
+            var studentDiv = document.createElement("div");
+            studentDiv.className = "student";
+            studentDiv.textContent = "Sinh viên: " + students[i].name + ", Tòa: " + selectedBuilding + ", Tầng: " + selectedFloor + ", Phòng: " + room;
+            studentList.appendChild(studentDiv);
+        }
+    }
+}
+function showStudentList(room) {
+    var studentList = document.getElementById("studentList");
+    studentList.innerHTML = "<h1>Danh sách sinh viên trong phòng </h1>";
+    
+    var hasStudents = false;
+    for (var i = 0; i < students.length; i++) {
+        if (students[i].room === room) {
+            hasStudents = true;
+            var studentDiv = document.createElement("div");
+            studentDiv.className = "student";
+            studentDiv.textContent = "Sinh viên: " + students[i].name + " ---- Tòa: " + selectedBuilding + ", Tầng: " + selectedFloor + ", Phòng: " + room;
+            studentList.appendChild(studentDiv);
+        }
+    }
+
+    if (!hasStudents) {
+        studentList.innerHTML += "<div class='student'>Phòng trống chưa có sinh viên</div>";
+    }
+}
+    </script>
+</body>
+</html>
