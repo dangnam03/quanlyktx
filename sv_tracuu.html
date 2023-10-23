@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        input{
+    
+            width: 500px;
+            height: 30px;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: #00CED1;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        form{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+  <form onsubmit="event.preventDefault();if(obj()) {return print_id();}">
+    <input type="text" id="selector" placeholder="Nhập số chứng minh thư/căn cước công dân">
+    <button type="submit">Tra cứu</button>
+    <div id="information"></div>
+  </form>
+
+  <script>
+    function obj() {
+      let id = document.getElementById("selector").value;
+      let Pattern_id = /^\d{10}$/;
+      
+      if (id === "") {
+        alert("invalid");
+        return false;
+      } else if (!Pattern_id.test(id)) {
+        alert("Identification number must be 10 digits long");
+        return false;
+      }
+      return true;
+    }
+    
+    function print_id() {
+      let id = document.getElementById("selector").value;
+      var data = [
+        { name: "Nguyễn Văn Tuấn", result: "Sinh viên đã đăng ký!", building: "Tòa A1", room: "101-A1", idNumber: "0123456789" },
+        { name: "Nguyễn Văn C", result: "Sinh viên này chưa đăng ký", idNumber: "2345678933" }
+      ];
+      
+      let tmp = null;
+      
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].idNumber === id) {
+          tmp = data[i];
+          break;
+        }
+      }
+      
+      if (tmp) {
+        document.getElementById("information").innerHTML = tmp.result + "<br>" + "Họ Và Tên: " + tmp.name + "<br>" + "Tòa: " + tmp.building + "<br>" + "Phòng số: " + tmp.room;
+      } else {
+        document.getElementById("information").innerHTML = "KHÔNG TÌM THẤY SINH VIÊN";
+      }
+    }
+  </script>
+</body>
+</html>
