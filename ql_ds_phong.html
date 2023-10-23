@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý kí túc xá</title>
-    <link rel="stylesheet" href="btl_web.css">
+    <link rel="stylesheet" href="ql_ds_phong.css">
     <style>
         .student {
             padding: 5px;
@@ -21,6 +21,9 @@
         <div id="buildingList">
             <!-- Danh sách tòa nhà sẽ được tạo ra ở đây -->
         </div>
+        <div class="lookup">
+            <button onclick="lookup()">Tra cứu</button>
+        </div>
     </div>
 
     <div class="container output-container">
@@ -31,9 +34,7 @@
         <div id="studentList">
             <!-- Danh sách sinh viên sẽ được tạo ra ở đây -->
         </div>
-        <div class="lookup">
-            <button onclick="lookup()">Tra cứu</button>
-        </div>
+        
     </div>
 
     <script>
@@ -44,47 +45,55 @@
         var selectedFloor = null;
         var selectedRoom = null;
         // Mảng lưu trữ thông tin sinh viên
-var students = [
-    { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Nguyễn Văn A" },
-    { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Trần Thị B" },
-    { building: "Tòa A1", floor: "Tầng 1", room: "102", name: "Lê Văn C" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
-    { building: "Tòa A1", floor: "Tầng 3", room: "301", name: "Nguyễn Văn Anh" },
-
-    
-    { building: "Tòa A3", floor: "Tầng 1", room: "101", name: "Sơn Tùng -MTP " },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn J97 " },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn J97 " },
-
-    { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Nguyễn Văn Trung" },
-    { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Trần Thị Bình" },
-    { building: "Tòa A1", floor: "Tầng 1", room: "102", name: "Lò Văn Cương" },
-    { building: "Tòa A3", floor: "Tầng 3", room: "301", name: "Phạm Thị D" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "202", name: "Phạm Thị Vũ" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "205", name: "Phạm Văn D" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Hoàng Thị Sen" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Cao Thị Dân" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị Dương" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
-    { building: "Tòa A4", floor: "Tầng 2", room: "201", name: "Phạm Thị Ánh" },
-    { building: "Tòa A4", floor: "Tầng 2", room: "201", name: "Sơn TÙng MTP" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị D" },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
-    { building: "Tòa A6", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
-    { building: "Tòa A3", floor: "Tầng 5", room: "501", name: "Nguyễn Tiến Đạt " },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Đỗ QUỳnh Hoa " },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
-    { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Nguyễn QUỳnh " },
-    { building: "Tòa A6", floor: "Tầng 2", room: "203", name: "Nguyễn QUỳnh Trang " },
-    { building: "Tòa A6", floor: "Tầng 2", room: "201", name: "Nguyễn THu Hà " },
-    { building: "Tòa A6", floor: "Tầng 2", room: "202", name: "Nguyễn Anh Trang " },
-    // Thêm các sinh viên khác tại đây
-];
+        var students = [
+            { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Nguyễn Văn A" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Trần Văn B" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Lê Văn C" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "101", name: "Phạm Văn D" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "102", name: "Nguyễn Văn Anh" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "102", name: "Nguyễn Văn A" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "102", name: "Trần Văn B" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "102", name: "Lê Văn C" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "102", name: "Phạm Văn D" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "103", name: "Nguyễn Văn An" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "103", name: "Nguyễn Văn Trung" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "104", name: "Trần Thị Bình" },
+            { building: "Tòa A1", floor: "Tầng 1", room: "105", name: "Lò Văn Cương" },
+            { building: "Tòa A3", floor: "Tầng 1", room: "101", name: "Sơn Tùng -MTP" },
+            { building: "Tòa A3", floor: "Tầng 1", room: "101", name: "Nguyễn J97" },
+            { building: "Tòa A3", floor: "Tầng 1", room: "102", name: "J97-Jack" },
+            { building: "Tòa A3", floor: "Tầng 1", room: "103", name: "Phạm Thị D" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "201", name: "Phạm Thị Vũ" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "202", name: "Phạm Văn D" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "203", name: "Hoàng Thị Sen" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "203", name: "Phạm Thị D" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "204", name: "Phạm Ngọc D" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "204", name: "Cao Thị Dân" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "204", name: "Phạm Thị Dương" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "205", name: "Phạm Thị D" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "205", name: "Phạm Thị Ánh" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "206", name: "Sơn Tùng MTP" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "207", name: "Phạm Thị D" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "208", name: "Nguyễn Quỳnh" },
+            { building: "Tòa A3", floor: "Tầng 2", room: "209", name: "Nguyễn Quỳnh Sơn" },
+            { building: "Tòa A3", floor: "Tầng 3", room: "301", name: "Nguyễn Quynh" },
+            { building: "Tòa A3", floor: "Tầng 3", room: "301", name: "Nguyễn Long" },
+            { building: "Tòa A3", floor: "Tầng 3", room: "302", name: "Nguyễn Tiến Đạt" },
+            { building: "Tòa A3", floor: "Tầng 3", room: "303", name: "Đỗ Quỳnh Hoa" },
+            { building: "Tòa A3", floor: "Tầng 3", room: "304", name: "Nguyễn Quỳnh" },
+            { building: "Tòa A3", floor: "Tầng 4", room: "401", name: "Nguyễn Hải" },
+            { building: "Tòa A3", floor: "Tầng 4", room: "401", name: "Nguyễn Hàn" },
+            { building: "Tòa A6", floor: "Tầng 1", room: "101", name: "Nguyễn Quỳnh Trang" },
+            { building: "Tòa A6", floor: "Tầng 2", room: "201", name: "Nguyễn Thu Hà" },
+            { building: "Tòa A6", floor: "Tầng 2", room: "202", name: "Nguyễn Anh Trang" },
+            { building: "Tòa A6", floor: "Tầng 3", room: "301", name: "Nguyễn B" },
+            { building: "Tòa A6", floor: "Tầng 3", room: "303", name: "Nguyễn Thu Thảo" },
+            { building: "Tòa A6", floor: "Tầng 4", room: "401", name: "Nguyễn Anh Tú" },
+            { building: "Tòa A6", floor: "Tầng 4", room: "402", name: "Nguyễn Phan Trang" },
+            { building: "Tòa A6", floor: "Tầng 5", room: "501", name: "Nguyễn Hà Anh" },
+            { building: "Tòa A6", floor: "Tầng 5", room: "501", name: "Nguyễn Anh Nam" },
+            // Thêm các sinh viên khác tại đây
+        ];
 
         var buildingList = document.getElementById("buildingList");
         for (var i = 0; i < buildings.length; i++) {

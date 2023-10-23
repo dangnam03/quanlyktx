@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.accordion {
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    background-color: #738fa2;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.active, .accordion:hover {
+    background-color: #88ca6c;
+}
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.room {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #e6e6e6;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.room:hover {
+    background-color: #7bbf83;
+}
+.output-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.lookup {
+    margin-top: 20px;
+    text-align: center;
+}
+.lookup button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.lookup button:hover {
+    background-color: #45a049;
+}
+
+
+
