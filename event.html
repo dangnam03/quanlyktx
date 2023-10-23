@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMAZING-GRACE</title>
+</head>
+<style>
+   *{
+    box-sizing: border-box;
+   }
+   .wrapper{
+    width: 800px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: cursive;
+    margin-top: 150px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+   }
+   fieldset{
+    border: none;
+   }
+   legend{
+    text-align: center;
+   }
+   input{
+    display: block;
+    width: 100%;
+    height : 35px;
+   }
+   form{
+    font-size: 20px;
+    font-family: cursive;
+   }
+   input[type="submit"]{
+      margin-top: 10px;
+      background-color: aquamarine;
+      border-radius: 10px;
+      border: none;
+      font-family: cursive;
+   }
+</style>
+<script>
+    function kt() {
+        let my_name = document.getElementById('fname').value;
+        let my_msv = document.getElementById('msv').value;
+        let my_sdt  = document.getElementById('sdt').value;
+        let my_sccd = document.getElementById('cccd').value;
+        let pattern_phone = /^\d{10}$/;
+        let pattern_msv  = /^\d{3}$/;
+        let pattern_sccd = /^\d{9}$/;
+        
+        if (my_name === "" || my_msv === "" || my_sdt === "" || my_sccd === ""){
+            alert("Invalid data");
+            return false;
+        }
+        else if (!pattern_msv.test(my_msv)){
+            alert("Student code must have 3 numbers");
+            return false;
+        }
+        else if(!pattern_phone.test(my_sdt)){
+            alert("Phone number must have 10 digits");
+            return false;
+        }
+        else if(!pattern_sccd.test(my_sccd)){
+            alert("Citizen identification number must have 9 numbers");
+            return false;
+        }
+    }
+    function searchStudent() {
+  // Lấy giá trị từ các trường nhập liệu
+        let name = document.getElementById('fname').value;
+        let id = document.getElementById('msv').value;
+
+  var students = [
+    { name: "Nguyễn Văn A", studentId: "001", phone: "0123456789", citizenshipId: "123456789", building: "Toà nhà A" },
+    { name: "Trần Thị B", studentId: "002", phone: "0987654321", citizenshipId: "987654321", building: "" },
+    { name: "Lê Văn C", studentId: "003", phone: "0123123123", citizenshipId: "987123456", building: "Toà nhà C" },
+    // Thêm thông tin sinh viên khác vào đây
+  ];
+  var foundStudent = null;
+  // Tìm sinh viên theo tên và mã
+  for (var i = 0; i < students.length; i++) {
+    if (students[i].name === name && students[i].studentId === id) {
+      foundStudent = students[i];
+      break;
+    }
+  }
+  // Hiển thị kết quả
+  if (foundStudent) {
+    document.getElementById("result").innerHTML = "Tên sinh viên: " + foundStudent.name + "<br>Mã sinh viên: " + foundStudent.studentId +
+      "<br>Số điện thoại: " + foundStudent.phone + "<br>Số căn cước công dân: " + foundStudent.citizenshipId +
+      "<br>Tòa nhà: " + (foundStudent.building ? foundStudent.building : "Không có thông tin tòa nhà");
+  } else {
+    document.getElementById("result").innerHTML = "Không tìm thấy thông tin sinh viên";
+  }
+}
+</script>
+<body>
+    <div class="wrapper">
+        <fieldset>
+            <legend>Hồ Sơ Online</legend>
+            <form id="myform" onsubmit="kt(); searchStudent(); event.preventDefault()">
+                <label for="fname">Họ tên</label>
+                <input type="text" id="fname">
+                <label for="msv">Mã sinh viên</label>
+                <input id="msv" type="text">
+                <label for="sdt">Số điện thoại</label>
+                <input type="tel" id="sdt" name="sdt">
+                <label for="cccd">Số căn cước công dân</label>
+                <input type="text" id="cccd" name="cccd">
+                <input type="submit" value="Tra cứu">
+                <div id="result"></div>
+             </form>
+        </fieldset>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
