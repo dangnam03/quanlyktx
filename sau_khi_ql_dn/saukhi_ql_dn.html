@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý KTX</title>
+    <link rel="stylesheet" href="/sau_khi_ql_dn/saukhi_ql_dn.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/72855cf0be.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One|Libre+Baskerville">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top menu">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.facebook.com/dhgtvtcaugiay">
+                <img src="/images/logo.jpg" alt="Logo" class="rounded-pill">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#colNavB">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="colNavB">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gioithieu">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#huongdan">HƯỚNG DẪN</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">TIỆN ÍCH</a>
+                        <ul class="dropdown-menu tien-ich">
+                          <li><a class="dropdown-item" href="#">Hồ sơ đăng kí online</a></li>
+                          <li><a class="dropdown-item" href="#">Quản lý phòng nội trú</a></li>
+                        </ul>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/trang_chu/trangchu.html">ĐĂNG XUẤT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="slide" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slide" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#slide" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#slide" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#slide" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active ratio ratio-21x9">
+                <img src="/images/ktx1.jpg" alt="ktx1" class="d-block">
+            </div>
+            <div class="carousel-item ratio ratio-21x9">
+                <img src="/images/ktx2.jpg" alt="ktx2" class="d-block">
+            </div>
+            <div class="carousel-item ratio ratio-21x9">
+                <img src="/images/ktx3.jpg" alt="ktx3" class="d-block">
+            </div>
+            <div class="carousel-item ratio ratio-21x9">
+                <img src="/images/ktx4.jpg" alt="ktx4" class="d-block">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slide" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    <div class="body-b">
+        <div id="gioithieu" class="container">
+            <h2><a href="https://www.utc.edu.vn/gioi-thieu/ban-quan-ly-ky-tuc-xa">GIỚI THIỆU KÝ TÚC XÁ</a></h2>
+            <div class="row ">
+                <div class="col-md-6">
+                    <p>Tổ chức, quản lý toàn diện khu KTX sinh viên. Bố trí xếp ở sinh viên nội trú đúng đối tượng, số lượng, đảm bảo thu lệ phí lưu trú của sinh viên nộp về trường đúng qui định; Đảm bảo đủ các điều kiện phục vụ sinh hoạt và học tập của sinh viên nội trú:
+                        <br>
+                        - Điện, nước sinh hoạt, dịch vụ ăn uống.
+                        <br>
+                        - An ninh trật tự, vệ sinh môi trường
+                        <br>
+                        - Hoạt động thể thao và văn hoá tinh thần trong khu KTX.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="/images/ktx5.jpg" class="rounded" alt="Ban quản lý">
+                </div>
+            </div>
+        </div>
+        <div id="huongdan" class="container mt-3">
+            <h2>HƯỚNG DẪN</h2>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header hder">
+                        <a class="btn" data-bs-toggle="collapse" href="#c1">
+                            Thủ tục đăng ký ở KTX đối với sinh viên khóa mới
+                        </a>
+                    </div>
+                    <div id="c1" class="collapse show" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            Sinh viên có nhu cầu ở KTX có thể thực hiện 1 trong 2 cách sau:
+                            <br>
+                            - Cách 1: Khi làm thủ tục nhập học SV đăng ký nhận phiếu nội trú tại bàn làm thủ tục của KTX, sau đó mang phiếu sang KTX nhận phòng.
+                            <br>
+                            - Cách 2: Có thể đăng ký trực tiếp tại trụ sở KTX.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header hder">
+                        <a class="collapsed btn" data-bs-toggle="collapse" href="#c2">
+                            Các giấy tờ cần mang thoe khi làm thủ tục nội trú KTX
+                        </a>
+                    </div>
+                    <div id="c2" class="collapse" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            - Bản sao giấy báo nhập học
+                            <br>
+                            - Bản sao Chứng minh nhân dân (hoặc Căn cước công dân).
+                            <br>
+                            - Phiếu nội trú do bộ phận chức năng cấp (đối với sinh viên thực hiện theo cách 1).
+                            <br>
+                            - Giấy khai báo thay đổi nhân khẩu (đối với SV mới nhập học năm thứ nhất).
+                            <br>
+                            - 03 ảnh 3x4.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header hder">
+                        <a class="collapsed btn" data-bs-toggle="collapse" href="#c3">
+                            Thủ tục nhận phòng
+                        </a>
+                    </div>
+                    <div id="c3" class="collapse" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            - Khi sinh viên vào phòng ở phải ký biên bản giao nhận tài sản trong phòng, chỉ số đồng hồ điện, nước.
+                            <br>
+                            - Khi hết hạn hợp đồng phải thanh toán các khoản phí trước khi rời khỏi KTX.
+                            <br>
+                            - Nếu muốn ở kỳ tiếp theo phải đăng ký (theo mẫu) trước khi về nghỉ Tết, hè.                
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header hder">
+                        <a class="collapsed btn" data-bs-toggle="collapse" href="#c4">
+                            Thủ tục đăng ký ở KTX đối với sinh viên năm thứ 2 trở đi
+                        </a>
+                    </div>
+                    <div id="c4" class="collapse" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            - Viết đơn xin ở nội trú (theo mẫu)
+                            <br>
+                            - Thẻ sinh viên (bản sao và bản chính để đối chiếu)
+                            <br>
+                            Các bước tiếp theo như sinh viên năm thứ nhất.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header hder">
+                        <a class="collapsed btn" data-bs-toggle="collapse" href="#c5">
+                            Mức phí đóng, nộp khi sinh viên vào KTX
+                        </a>
+                    </div>
+                    <div id="c5" class="collapse" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            Mức giá cụ thể các loại phòng ở KTX như sau:
+                            <br>
+                            <img src="/images/ktx_banggia.jpg" alt="Bảng giá">
+                            <br>
+                            Các khoản phí khác theo quy định đã được Ban giám hiệu phê duyệt như: phí khấu hao; hồ sơ; hộ khẩu tạm trú, tạm vắng; cược tài sản...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container-fluid footer-body">
+            <div class="row footer-in">
+                <div class="col-sm-4">
+                    <h4>Website khác</h4>
+                    <ul>
+                        <li><a href="https://utc.edu.vn/">1. Trang chủ</a></li>
+                        <li><a href="https://usmart.utc.edu.vn">2. Nhà trường điện tử</a></li>
+                        <li><a href="https://vanphongdientu.utc.edu.vn/">3. Văn phòng điện tử</a></li>
+                        <li><a href="https://qldt.utc.edu.vn/">4. Quản lý đào tạo</a></li>
+                        <li><a href="https://sinhvienhientai.utc.edu.vn/">5. Kênh sinh viên</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">     
+                    <h4>Liên hệ</h4>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/dhgtvtcaugiay" target="_blank"><i class="fa-brands fa-square-facebook fa-beat" style="color: #1d2ad7;"></i> Facebook</a>
+                        </li>
+                        <li>
+                            <p>
+                                <i class="fa-solid fa-square-phone fa-beat" style="color: #00ff00;"></i> Phone: 024. 37741734
+                                <br>
+                                <i class="fa-sharp fa-regular fa-envelope fa-beat" style="color: #db0000;"></i> E-mail: dhgtvt@utc.edu.vn
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Địa chỉ</h4>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-location-dot fa-bounce" style="color: #1864e7;"></i> Số 99 Nguyễn Chí Thanh, P.Láng Hạ, Q.Đống Đa, Hà Nội
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-foot bg-dark">
+            <div class="container">
+                <p class="text-center">Copyright &copy; 2023 - Developed by NHÓM 10.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
