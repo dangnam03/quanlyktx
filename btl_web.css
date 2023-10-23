@@ -33,7 +33,7 @@ h1 {
     margin-bottom: 10px;
 }
 .active, .accordion:hover {
-    background-color: #537544;
+    background-color: #88ca6c;
 }
 .panel {
     padding: 0 18px;
@@ -52,7 +52,7 @@ h1 {
     transition: background-color 0.3s;
 }
 .room:hover {
-    background-color: #d9d9d9;
+    background-color: #7bbf83;
 }
 .output-container {
     margin-top: 20px;
