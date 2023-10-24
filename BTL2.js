@@ -1,5 +1,5 @@
-document.getElementById("submit").onclick = function (myForm) {
-  myForm.preventDefault(); // Ngăn chặn gửi biểu mẫu mặc định
+document.getElementById("submit").onclick = function (e) {
+  e.preventDefault(); // Ngăn chặn gửi biểu mẫu mặc định
   function checknull(txt) {
       return txt.value.trim() === "";
   }
