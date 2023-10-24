@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SV Tra cứu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/72855cf0be.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One|Libre+Baskerville">
+    <style>
+        .menu img {
+            width: 50px;
+            margin-left: 10px;
+        }
+        .menu ul li {
+            margin-right: 15px;
+        }
+        .menu ul li:hover{
+            background-color: #146fd0;
+        }
+        .menu ul li a:hover{
+            color: #ffffff;
+        }
+        .menu ul li a {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 20px;  
+            text-align: center;
+        }
+        .menu .tien-ich{
+            background-color: rgb(33,37,41);
+        }
+        .menu .tien-ich li{
+            margin-right: 0px;
+        }
+        .menu .tien-ich li a{
+            color: #ffffff;
+        }
+        .menu .tien-ich li a:hover {
+            background-color: #146fd0;
+        }
+        .body-b {
+          padding: 100px 0;
+        }
+        .body-in {
+          padding: 20px ;
+        }
+        .body-in h3 {
+          padding: 10px 0 20px;
+          text-align: center;
+        }
+        .bt {
+          display: flex;
+          justify-content: center;
+          padding: 20px 0 10px;
+        }
+        .in-ra {
+          text-align: center;
+        }
+        footer .footer-body {
+            background-color: #ababab;
+        }
+        footer .footer-in {
+            padding: 50px;
+        }
+        footer ul li{
+            list-style: none;
+            font-size: 20px;
+            font-weight: lighter;
+        }
+        footer ul li a{
+            text-decoration: none;
+            color: #000000;
+        }
+        footer ul li i{
+            font-size: 24px;
+        }
+        footer .footer-foot {
+            padding: 20px 0 10px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top menu">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.facebook.com/dhgtvtcaugiay">
+            <img src="/images/logo.jpg" alt="Logo" class="rounded-pill">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#colNavB">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="colNavB">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">TRANG CHỦ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">TIỆN ÍCH</a>
+                    <ul class="dropdown-menu tien-ich">
+                      <li><a class="dropdown-item" href="#">Đăng ký nội trú KTX</a></li>
+                      <li><a class="dropdown-item" href="#">Tra cứu tiền điện, nước</a></li>
+                    </ul>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sv_dang_nhap/sv_dangnhap.html">ĐĂNG XUẤT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+  <div class="container body-b">
+    <div class="row">
+      <div class="col-md-6 shadow mx-auto body-in">
+        <h3>Tra cứu đăng ký nội trú</h3>
+        <form onsubmit="event.preventDefault();if(obj()) {return print_id();}">
+            <input type="text" id="selector" class="form-control" placeholder="Nhập CMND/CCCD/Số điện thoại/Mã sinh viên">
+            <div class="bt">
+              <button type="submit" class="btn btn-outline-primary">Tra cứu</button>
+            </div>
+            <div id="information" class="in-ra"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container-fluid footer-body">
+        <div class="row footer-in">
+            <div class="col-sm-4">
+                <h4>Website khác</h4>
+                <ul>
+                    <li><a href="https://utc.edu.vn/">1. Trang chủ</a></li>
+                    <li><a href="https://usmart.utc.edu.vn">2. Nhà trường điện tử</a></li>
+                    <li><a href="https://vanphongdientu.utc.edu.vn/">3. Văn phòng điện tử</a></li>
+                    <li><a href="https://qldt.utc.edu.vn/">4. Quản lý đào tạo</a></li>
+                    <li><a href="https://sinhvienhientai.utc.edu.vn/">5. Kênh sinh viên</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">     
+                <h4>Liên hệ</h4>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/dhgtvtcaugiay" target="_blank"><i class="fa-brands fa-square-facebook fa-beat" style="color: #1d2ad7;"></i> Facebook</a>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="fa-solid fa-square-phone fa-beat" style="color: #00ff00;"></i> Phone: 024. 37741734
+                            <br>
+                            <i class="fa-sharp fa-regular fa-envelope fa-beat" style="color: #db0000;"></i> E-mail: dhgtvt@utc.edu.vn
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h4>Địa chỉ</h4>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot fa-bounce" style="color: #1864e7;"></i> Số 99 Nguyễn Chí Thanh, P.Láng Hạ, Q.Đống Đa, Hà Nội
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-foot bg-dark">
+        <div class="container">
+            <p class="text-center">Copyright &copy; 2023 - Developed by NHÓM 10.</p>
+        </div>
+    </div>
+  </footer>
+  <script>
+    function obj() {
+      let id = document.getElementById("selector").value;
+      let Pattern_id = /^\d{10}$/;
+      
+      if (id === "") {
+        alert("invalid");
+        return false;
+      } else if (!Pattern_id.test(id)) {
+        alert("Identification number must be 10 digits long");
+        return false;
+      }
+      return true;
+    }
+    
+    function print_id() {
+      let id = document.getElementById("selector").value;
+      var data = [
+        { name: "Nguyễn Văn Tuấn", result: "Sinh viên đã đăng ký!", building: "Tòa A1", room: "101-A1", idNumber: "0123456789" },
+        { name: "Nguyễn Văn C", result: "Sinh viên này chưa đăng ký", idNumber: "2345678933" }
+      ];
+      
+      let tmp = null;
+      
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].idNumber === id) {
+          tmp = data[i];
+          break;
+        }
+      }
+      
+      if (tmp) {
+        document.getElementById("information").innerHTML = tmp.result + "<br>" + "Họ Và Tên: " + tmp.name + "<br>" + "Tòa: " + tmp.building + "<br>" + "Phòng số: " + tmp.room;
+      } else {
+        document.getElementById("information").innerHTML = "KHÔNG TÌM THẤY SINH VIÊN";
+      }
+    }
+  </script>
+</body>
+</html>
