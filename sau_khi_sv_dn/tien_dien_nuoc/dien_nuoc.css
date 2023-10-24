@@ -1,0 +1,86 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.menu img {
+    width: 50px;
+    margin-left: 10px;
+}
+.menu ul li {
+    margin-right: 15px;
+}
+.menu ul li:hover{
+    background-color: #146fd0;
+}
+.menu ul li a:hover{
+    color: #ffffff;
+}
+.menu ul li a {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;  
+    text-align: center;
+}
+.menu .tien-ich{
+    background-color: rgb(33,37,41);
+}
+.menu .tien-ich li{
+    margin-right: 0px;
+}
+.menu .tien-ich li a{
+    color: #ffffff;
+}
+.menu .tien-ich li a:hover {
+    background-color: #146fd0;
+}
+.body-b{
+    padding: 150px 0 100px;
+}
+.body-in {
+    margin: 0px auto;
+}
+.body-in form {
+    padding: 15px;
+}
+.body-in h2 {
+    text-align: center;
+}
+.body-in .bt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input.form-control{
+    display: inline-block;
+    background-color: rgb(214, 237, 250);
+}
+select.form-control{
+    display: inline-block;
+    background-color: rgb(214, 237, 250);
+
+}
+.result{
+ font-size: 150%;
+}
+footer .footer-body {
+    background-color: #ababab;
+}
+footer .footer-in {
+    padding: 50px;
+}
+footer ul li{
+    list-style: none;
+    font-size: 20px;
+    font-weight: lighter;
+}
+footer ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+footer ul li i{
+    font-size: 24px;
+}
+footer .footer-foot {
+    padding: 20px 0 10px;
+    color: #ffffff;
+}
