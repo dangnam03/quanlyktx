@@ -1,4 +1,3 @@
-//let check_phone = /^\(\d{2,4}\)[\s\.-]\d{3}[\s\.-]\d{3}$/;
 let check_phone = /^0\d{9}$/;
 let check_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 let check_cccd = /^\d{12}$/;
