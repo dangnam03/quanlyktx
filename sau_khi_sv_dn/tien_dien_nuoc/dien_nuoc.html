@@ -155,7 +155,7 @@
 
             // Kiểm tra xem giá trị phòng có trong danh sách hợp lệ hay không
             if (validPhongs.indexOf(parseInt(enteredPhong)) !== -1) {
-                var resultText = 'Tòa ${selectedToa} tầng ${selectedTang} phòng ${enteredPhong}: tiền điện ... ; tiền nước ...';
+                var resultText = `Tòa ${selectedToa} tầng ${selectedTang} phòng ${enteredPhong}: tiền điện ... ; tiền nước ...`;
                 var resultElement = document.getElementById('result');
                 resultElement.innerHTML = resultText;
             } else {

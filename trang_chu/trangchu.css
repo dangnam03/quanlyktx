@@ -19,6 +19,9 @@
     font-size: 20px;  
     text-align: center;
 }
+#slide {
+    padding-top: 75px;
+}
 #slide img {
     width: 100%;
 }
