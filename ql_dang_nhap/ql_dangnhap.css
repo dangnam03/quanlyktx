@@ -14,8 +14,6 @@
 }
 .menu ul li a:hover{
     color: #ffffff;
-}
-.body-b {
     background-image: linear-gradient(to bottom, #cccccc, #ffffff);
 }
 .dn {

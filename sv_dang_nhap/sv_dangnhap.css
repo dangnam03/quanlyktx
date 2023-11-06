@@ -15,11 +15,9 @@
 .menu ul li a:hover{
     color: #ffffff;
 }
-.body-b {
-    background-image: linear-gradient(to bottom, #cccccc, #ffffff);
-}
 .dn {
     padding: 150px 0 100px;
+    background-image: linear-gradient(to bottom, #cccccc, #ffffff);
 }
 .body-in {
     background-color: #ffffff;

@@ -115,6 +115,5 @@ function validForm(f) {
     alert("Bạn chưa chọn địa chỉ thường trú cho người thân");
     return;
   }
-  
   alert("Đăng kí thành công");
 }
